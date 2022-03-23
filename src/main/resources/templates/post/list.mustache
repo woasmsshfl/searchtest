@@ -1,0 +1,32 @@
+{{> /layout/header}}
+
+<div class="container mt-3">
+  <h2>실행결과 예시 :</h2>
+  <form action="/" class="d-flex" method="get">
+    <input class="form-control me-2 w-25 ms-auto" type="text" placeholder="Search" name="keyword" />
+    <button class="btn btn-primary" type="submit">Search</button>
+  </form>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>제목</th>
+        <th>내용</th>
+        <th>작성일</th>
+      </tr>
+    </thead>
+    {{#boards}}
+    <tbody>
+      <tr>
+        <td>{{ id }}</td>
+        <td>{{ title }}</td>
+        <td>{{ content }}</td>
+        <td>{{ createDate }}</td>
+      </tr>
+    </tbody>
+    {{/boards}}
+  </table>
+</div>
+
+{{> /layout/footer}}
